@@ -6,6 +6,9 @@ module.exports = {
     // require return statements in callbacks of array's methods
     'array-callback-return': 'error',
 
+    // treat var statements as if they were block scoped
+    'block-scoped-var': 'error',
+
     // require return statements to either always or never specify values
     'consistent-return': 'error',
 
@@ -65,6 +68,9 @@ module.exports = {
     'no-useless-concat': 'error',
 
     // disallow use of void operator
-    'no-void': 'error'
+    'no-void': 'error',
+
+    // require use of the second argument for parseInt()
+    radix: 'error'
   }
 };
