@@ -3,6 +3,9 @@
 module.exports = {
   rules: {
 
+    // enforces no braces where they can be omitted
+    'arrow-body-style': ['error', 'as-needed'],
+
     // require space after the * in generator functions
     'generator-star-spacing': ['error', 'after'],
 
@@ -20,6 +23,9 @@ module.exports = {
 
     // require template literals instead of string concatenation
     'prefer-template': 'error',
+
+    // disallow generator functions that do not have yield
+    'require-yield': 'error',
 
     // require space after the * in yield declarations
     'yield-star-spacing': ['error', 'after']
