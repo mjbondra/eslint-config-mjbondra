@@ -13,6 +13,9 @@ module.exports = {
     'no-extra-parens': ['error', 'all'],
 
     // disallow unnecessary semicolons
-    'no-extra-semi': 'error'
+    'no-extra-semi': 'error',
+
+    // disallow use of Object.prototypes builtins directly
+    'no-prototype-builtins': 'error'
   }
 };
