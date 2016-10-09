@@ -36,7 +36,7 @@ module.exports = {
     // STYLE GUIDE
 
     // disallow non-import statements appearing before import statements
-    'import/imports-first': 'error',
+    'import/first': 'error',
 
     // disallow duplicate imports
     'import/no-duplicates': 'error',
