@@ -7,9 +7,14 @@ ESLint configurations for my JavaScript projects.
 ## Installation
 
 ```shell
-npm install eslint-config-mjbondra eslint --save-dev
+npm i eslint-config-mjbondra
 ```
 
+The following eslint plugins must be installed:
+
+```shell
+npm i eslint-plugin-import eslint-plugin-promise eslint-plugin-standard
+```
 
 ## Usage
 
