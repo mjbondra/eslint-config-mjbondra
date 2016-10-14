@@ -1,5 +1,6 @@
 # eslint-config-mjbondra
 
+[![Build Status](https://img.shields.io/travis/mjbondra/eslint-config-mjbondra.svg?style=flat)](https://travis-ci.org/mjbondra/eslint-config-mjbondra) [![NPM version](https://img.shields.io/npm/v/eslint-config-mjbondra.svg?style=flat)](http://badge.fury.io/js/eslint-config-mjbondra)
 
 ESLint configurations for my JavaScript projects.
 
