@@ -10,10 +10,15 @@ ESLint configurations for my JavaScript projects.
 npm i eslint-config-mjbondra
 ```
 
-The following eslint plugins must be installed:
+#### Peer Dependencies
+
+- [ESLint](http://eslint.org/)
+- [eslint-plugin-import](https://github.com/benmosher/eslint-plugin-import)
+- [eslint-plugin-promise](https://github.com/xjamundx/eslint-plugin-promise)
+- [eslint-plugin-standard](https://github.com/xjamundx/eslint-plugin-standard)
 
 ```shell
-npm i eslint-plugin-import eslint-plugin-promise eslint-plugin-standard
+npm i eslint eslint-plugin-import eslint-plugin-promise eslint-plugin-standard
 ```
 
 ## Usage
@@ -26,7 +31,7 @@ Create a file named `.eslintrc` in your project's root directory that contains t
 }
 ```
 
-`mjbondra/script` in the above example could instead be `mjbondra` if your project uses ES6 modules -- files that use the `import`/`export` module syntax.
+`mjbondra/script` in the above example could instead be `mjbondra` if your project uses ES2015 modules -- files that use the `import`/`export` module syntax.
 
 
 ## Available Configurations
@@ -34,18 +39,18 @@ Create a file named `.eslintrc` in your project's root directory that contains t
 
 ### `mjbondra`
 
-* Base configuration for linting ES6 modules.
+* Base configuration for linting ES2015 modules.
 
 * Extends [StandardJS](http://standardjs.com/rules.html) -- with semicolons -- and borrows additional rules from the [Airbnb JavaScript Styleguide](https://github.com/airbnb/javascript).
 
-* You should use `mjbondra/script` with your project unless it contains ES6 modules -- files that use the `import`/`export` module syntax.
+* You should use `mjbondra/script` with your project unless it contains ES2015 modules -- files that use the `import`/`export` module syntax.
 
 
 ### `mjbondra/script`
 
-* Extends base configuration for scripts that are **NOT** ES6 modules.
+* Extends base configuration for scripts that are **NOT** ES2015 modules.
 
-* Regular scripts and CommonJS/Node.js modules **DO NOT** execute in `strict` mode by default -- unlike ES6 modules. The `mjbondra/script` configuration enforces that these files **ALWAYS** include a global `'use strict';` declaration.
+* Regular scripts and CommonJS/Node.js modules **DO NOT** execute in `strict` mode by default -- unlike ES2015 modules. The `mjbondra/script` configuration enforces that these files **ALWAYS** include a global `'use strict';` declaration.
 
 
 ## Rules
@@ -58,7 +63,7 @@ Create a file named `.eslintrc` in your project's root directory that contains t
   - [Strict Mode](#strict-mode)
   - [Variables](#variables)
   - [Stylistic Issues](#stylistic-issues)
-  - [ECMAScript 6](#ecmascript-6)
+  - [ECMAScript 2015](#ecmascript-2015)
 - [Plugin Rules](#plugin-rules)
   - [Import](#import)
     - [Static Analysis](#static-analysis)
@@ -315,7 +320,7 @@ Create a file named `.eslintrc` in your project's root directory that contains t
 | [wrap-regex](http://eslint.org/docs/rules/wrap-regex) | require parenthesis around regex literals | ⚪️         | ⚪️                | ⚪️                       | ⚪️                     |
 
 
-#### ECMAScript 6
+#### ECMAScript 2015
 
 | Rule                                     | Description                              | `mjbondra` | `mjbondra/script` | `eslint-config-standard` | `eslint-config-airbnb` |
 | ---------------------------------------- | ---------------------------------------- | ---------- | ----------------- | ------------------------ | ---------------------- |
