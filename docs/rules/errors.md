@@ -6,7 +6,10 @@
 
 - disallow assignment operators in conditional expressions
   - allows assignments in test conditions *only if* they are enclosed in parentheses
-- ```'no-cond-assign': 'error'```
+
+```javascript
+{ 'no-cond-assign': 'error' }
+```
 
 ```javascript
 /** CORRECT USE */
@@ -33,7 +36,10 @@ while (node = node.parent) {}
 ## [no-console](http://eslint.org/docs/rules/no-console)
 
 - disallow the use of `console`
-- `'no-console': 'error'`
+
+```javascript
+{ 'no-console': 'error' }
+```
 
 ```javascript
 /** CORRECT USE */
@@ -61,7 +67,10 @@ console.error('foobar');
 
 - disallow constant expressions in conditions
   - allows constant expressions in loops
-- `'no-constant-condition': ['error', { checkLoops: false }]`
+
+```javascript
+{ 'no-constant-condition': ['error', { checkLoops: false }] }
+```
 
 ```javascript
 /** CORRECT USE */
@@ -87,7 +96,10 @@ if (true) {}
 ## [no-control-regex](http://eslint.org/docs/rules/no-control-regex)
 
 - disallow control characters in regular expressions
-- `'no-control-regex': 'error'`
+
+```javascript
+{ 'no-control-regex': 'error' }
+```
 
 ```javascript
 /** CORRECT USE */
@@ -108,7 +120,10 @@ const bar = new RegExp('\x1f');
 ## [no-debugger](http://eslint.org/docs/rules/no-debugger)
 
 - disallow the use of `debugger`
-- `'no-debugger': 'error'`
+
+```javascript
+{ 'no-debugger': 'error' }
+```
 
 ```javascript
 /** INCORRECT USE */
@@ -122,9 +137,12 @@ debugger;
 ## [no-dupe-args](http://eslint.org/docs/rules/no-dupe-args)
 
 - disallow duplicate arguments in `function` definitions
-- `'no-dupe-args': 'error'`
 
-``````javascript
+```javascript
+{ 'no-dupe-args': 'error' }
+```
+
+```javascript
 /** CORRECT USE */
 
 function foo (a, b, c) {}
@@ -134,16 +152,19 @@ function foo (a, b, c) {}
 
 function foo (a, b, a) {}
 
-``````
+```
 
 
 
 ## [no-dupe-keys](http://eslint.org/docs/rules/no-dupe-keys)
 
 - disallow duplicate keys in object literals
-- `'no-dupe-keys': 'error'`
 
-``````javascript
+```javascript
+{ 'no-dupe-keys': 'error' }
+```
+
+```javascript
 /** CORRECT USE */
 
 const foo = {
@@ -161,16 +182,19 @@ const foo = {
   bar: 'foobar'
 };
 
-``````
+```
 
 
 
 ## [no-duplicate-case](http://eslint.org/docs/rules/no-duplicate-case)
 
 - disallow duplicate case labels
-- `'no-duplicate-case': 'error'`
 
-``````javascript
+```javascript
+{ 'no-duplicate-case': 'error' }
+```
+
+```javascript
 /** CORRECT USE */
 
 switch (foo) {
@@ -194,16 +218,19 @@ switch (foo) {
     break;
 }
 
-``````
+```
 
 
 
 ## [no-empty-character-class](http://eslint.org/docs/rules/no-empty-character-class)
 
 - disallow empty character classes in regular expressions
-- `'no-empty-character-class': 'error'`
 
-``````javascript
+```javascript
+'no-empty-character-class': 'error'
+```
+
+```javascript
 /** CORRECT USE */
 
 /^abc[a-z]/.test('abcdefg');
@@ -215,7 +242,7 @@ switch (foo) {
 /^abc[]/.test('abcdefg');
 'abcdefg'.match(/^abc[]/);
 
-``````
+```
 
 
 
@@ -223,9 +250,12 @@ switch (foo) {
 
 - disallow empty block statements
   - allows empty `catch` clauses
-- `'no-empty': ['error', { allowEmptyCatch: true }]`
 
-``````javascript
+```javascript
+{ 'no-empty': ['error', { allowEmptyCatch: true }] }
+```
+
+```javascript
 /** CORRECT USE */
 
 // block
@@ -244,16 +274,19 @@ try {
 // empty block
 if (bar) {}
 
-``````
+```
 
 
 
 ## [no-ex-assign](http://eslint.org/docs/rules/no-ex-assign)
 
 - disallow reassigning exceptions in `catch` clauses
-- `'no-ex-assign': 'error'`
 
-``````javascript
+```javascript
+{ 'no-ex-assign': 'error' }
+```
+
+```javascript
 /** CORRECT USE */
 
 try {
@@ -271,16 +304,19 @@ try {
   err = 1;
 }
 
-``````
+```
 
 
 
 ## [no-extra-boolean-cast](http://eslint.org/docs/rules/no-extra-boolean-cast)
 
 - disallow unnecessary boolean casts
-- `'no-extra-boolean-cast': 'error'`
 
-``````javascript
+```javascript
+{ 'no-extra-boolean-cast': 'error' }
+```
+
+```javascript
 /** CORRECT USAGE */
 
 // implicit boolean coercion
@@ -304,7 +340,7 @@ function bar (prop) {
   return !!!prop;
 }
 
-``````
+```
 
 
 
@@ -315,16 +351,17 @@ function bar (prop) {
   - allows extra parentheses around assignments in `return` statements
   - allows extra parentheses in nested binary expressions
 
-
-- ``````
+```javascript
+{  
   'no-extra-parens': ['error', 'all', {
     conditionalAssign: false,
     returnAssign: false,
     nestedBinaryExpressions: false
   }]
-  ``````
+}
+```
 
-``````javascript
+```javascript
 /** CORRECT USAGE */
 
 // no unnecessary parentheses
@@ -349,16 +386,19 @@ const baz = a + (b * c);
 const foo = (b * c);
 typeof (foo);
 
-``````
+```
 
 
 
 ## [no-extra-semi](http://eslint.org/docs/rules/no-extra-semi)
 
 - disallow unnecessary semicolons
-- `'no-extra-semi': 'error'`
 
-``````javascript
+```javascript
+{ 'no-extra-semi': 'error' }
+```
+
+```javascript
 /** CORRECT USAGE */
 
 // single semicolon
@@ -380,16 +420,19 @@ function bar (val) {
   return !!val;
 };
 
-``````
+```
 
 
 
 ## [no-func-assign](http://eslint.org/docs/rules/no-func-assign)
 
 - disallow reassigning `function` declarations
-- `'no-func-assign': 'error'`
 
-``````javascript
+```javascript
+{ 'no-func-assign': 'error' }
+```
+
+```javascript
 /** CORRECT USAGE */
 
 // function expression
@@ -403,16 +446,19 @@ foo = false;
 function bar (val) { return !!val; }
 bar = false;
 
-``````
+```
 
 
 
 ## [no-inner-declarations](http://eslint.org/docs/rules/no-inner-declarations)
 
 - disallow `function` or `var` declarations in nested blocks
-- `'no-inner-declarations': ['error', 'both']`
 
-``````javascript
+```javascript
+{ 'no-inner-declarations': ['error', 'both'] }
+```
+
+```javascript
 /** CORRECT USAGE */
 
 // block scope declarations
@@ -430,16 +476,19 @@ if (foo) {
   function baz (val) { return !!val; }
 }
 
-``````
+```
 
 
 
 ## [no-invalid-regexp](http://eslint.org/docs/rules/no-invalid-regexp)
 
 - disallow invalid regular expression strings in `RegExp` constructors
-- `'no-invalid-regexp': 'error'`
 
-``````javascript
+```javascript
+{ 'no-invalid-regexp': 'error' }
+```
+
+```javascript
 /** CORRECT USAGE */
 
 // valid expression
@@ -457,16 +506,19 @@ new RegExp('[');
 // valid expression and invalid flag
 new RegExp('.', 'z');
 
-``````
+```
 
 
 
 ## [no-irregular-whitespace](http://eslint.org/docs/rules/no-irregular-whitespace)
 
 - disallow irregular whitespace outside of strings
-- `'no-irregular-whitespace': 'error'`
 
-``````javascript
+```javascript
+{ 'no-irregular-whitespace': 'error' }
+```
+
+```javascript
 /** CORRECT USAGE */
 
 // irregular whitespace in string
@@ -478,16 +530,19 @@ const foo = 'a﻿b'; // a\ufeffb
 // irregular whitespace
 ﻿ // \ufeff
 
-``````
+```
 
 
 
 ## [no-obj-calls](http://eslint.org/docs/rules/no-obj-calls)
 
 - disallow calling global object properties as functions
-- `'no-obj-calls': 'error'`
 
-``````javascript
+```javascript
+{ 'no-obj-calls': 'error' }
+```
+
+```javascript
 /** CORRECT USAGE */
 
 function area (radius) {
@@ -501,16 +556,19 @@ const object = JSON.parse('{}');
 const math = Math();
 const json = JSON();
 
-``````
+```
 
 
 
 ## [no-prototype-builtins](http://eslint.org/docs/rules/no-prototype-builtins)
 
 - disallow calling some `Object.prototype` methods directly on objects
-- `'no-prototype-builtins': 'error'`
 
-``````javascript
+```javascript
+{ 'no-prototype-builtins': 'error' }
+```
+
+```javascript
 /** CORRECT USAGE */
 
 {}.hasOwnProperty.call(foo, 'bar');
@@ -524,16 +582,19 @@ foo.hasOwnProperty('bar');
 foo.isPrototypeOf(bar);
 foo.propertyIsEnumerable('bar');
 
-``````
+```
 
 
 
 ## [no-regex-spaces](http://eslint.org/docs/rules/no-regex-spaces)
 
 - disallow multiple spaces in regular expressions
-- `'no-regex-spaces': 'error'`
 
-``````javascript
+```javascript
+{ 'no-regex-spaces': 'error' }
+```
+
+```javascript
 /** CORRECT USAGE */
 
 /foo {3}bar/;
@@ -545,16 +606,19 @@ new RegExp('foo {3}bar');
 /foo   bar/;
 new RegExp('foo   bar');
 
-``````
+```
 
 
 
 ## [no-sparse-arrays](http://eslint.org/docs/rules/no-sparse-arrays)
 
 - disallow sparse arrays
-- `'no-sparse-arrays': 'error'`
 
-``````javascript
+```javascript
+{ 'no-sparse-arrays': 'error' }
+```
+
+```javascript
 /** CORRECT USAGE */
 
 // intentional sparse array
@@ -569,16 +633,19 @@ const foo = [,,,,,];
 // unintentional sparse array
 const bar = ['foo', 'bar', , 'baz'];
 
-``````
+```
 
 
 
 ## [no-template-curly-in-string](http://eslint.org/docs/rules/no-template-curly-in-string)
 
 - disallow template literal placeholder syntax in regular strings
-- `'no-template-curly-in-string': 'error'`
 
-``````javascript
+```javascript
+{ 'no-template-curly-in-string': 'error' }
+```
+
+```javascript
 /** CORRECT USAGE */
 
 // backticks
@@ -593,16 +660,19 @@ const bar = ['foo', 'bar', , 'baz'];
 // double quotes
 "Hello ${name}!";
 
-``````
+```
 
 
 
 ## [no-unexpected-multiline](http://eslint.org/docs/rules/no-unexpected-multiline)
 
 - disallow confusing multiline expressions
-- `'no-unexpected-multiline': 'error'`
 
-``````javascript
+```javascript
+{ 'no-unexpected-multiline': 'error' }
+```
+
+```javascript
 /** CORRECT USAGE */
 
 const foo = bar;
@@ -626,7 +696,7 @@ const bar = 'world'
 const baz = () => {}
 `hello`
 
-``````
+```
 
 
 
@@ -634,9 +704,12 @@ const baz = () => {}
 
 - disallow unreachable code after `return`, `throw`, `continue`, and `break` statements
   - allows for references to hoisted variables and functions
-- `'no-unreachable': 'error'`
 
-``````javascript
+```javascript
+{ 'no-unreachable': 'error' }
+```
+
+```javascript
 /** CORRECT USAGE */
 
 // hoisted function
@@ -663,7 +736,7 @@ while (true) {
   bar();
 }
 
-``````
+```
 
 
 
@@ -671,9 +744,12 @@ while (true) {
 
 - disallow `return`, `throw`, `break`, and `continue` statements in `finally` blocks
   - allows indirect usages, such as in `function` or `class` definitions
-- `'no-unsafe-finally': 'error'`
 
-``````javascript
+```javascript
+{ 'no-unsafe-finally': 'error' }
+```
+
+```javascript
 /** CORRECT USAGE */
 
 try {
@@ -695,16 +771,19 @@ try {
   return foo();
 }
 
-``````
+```
 
 
 
 ## [no-unsafe-negation](http://eslint.org/docs/rules/no-unsafe-negation)
 
 - disallow negating the left operand of `in` and `instanceof` operators.
-- `'no-unsafe-negation': 'error'`
 
-``````javascript
+```javascript
+{ 'no-unsafe-negation': 'error' }
+```
+
+```javascript
 /** CORRECT USAGE */
 
 if (!(key in object)) {}
@@ -717,16 +796,19 @@ if(('' + !key) in object) {}
 if (!key in object) {}
 if (!obj instanceof Ctor) {}
 
-``````
+```
 
 
 
 ## [use-isnan](http://eslint.org/docs/rules/use-isnan)
 
 - require calls to `isNaN()` when checking for `NaN`
-- `'use-isnan': 'error'`
 
-``````javascript
+```javascript
+{ 'use-isnan': 'error' }
+```
+
+```javascript
 /** CORRECT USAGE */
 
 if (isNaN(foo)) {}
@@ -738,14 +820,17 @@ if (!isNaN(foo)) {}
 if (foo === NaN) {}
 if (foo !== NaN) {}
 
-``````
+```
 
 
 
 ## [valid-jsdoc](http://eslint.org/docs/rules/valid-jsdoc)
 
 - enforce valid JSDoc comments
-- `'valid-jsdoc': 'off'`
+
+```javascript
+{ 'valid-jsdoc': 'off' }
+```
 
 
 
@@ -755,9 +840,12 @@ if (foo !== NaN) {}
 
 - enforce comparing `typeof` expressions against valid strings
   - requires `typeof` expressions to only be compared to string literals or other `typeof` expressions, and disallows comparisons to any other value
-- `'valid-typeof': ['error', { requireStringLiterals: true }]`
 
-``````javascript
+```javascript
+{ 'valid-typeof': ['error', { requireStringLiterals: true }] }
+```
+
+```javascript
 /** CORRECT USAGE */
 
 typeof foo === 'undefined';
@@ -775,5 +863,4 @@ typeof qux === 'some invalid type';
 typeof baz === anotherVariable;
 typeof foo === 5;
 
-``````
-
+```
