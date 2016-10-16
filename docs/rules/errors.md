@@ -93,13 +93,13 @@ if (true) { }
 /** CORRECT USE */
 
 const pattern1a = /\x20/;
-const pattern2a = new RegExp("\x20");
+const pattern2a = new RegExp('\x20');
 
 
 /** INCORRECT USE */
 
 const pattern1b = /\x1f/;
-const pattern2b = new RegExp("\x1f");
+const pattern2b = new RegExp('\x1f');
 
 ```
 
@@ -495,16 +495,16 @@ const json = JSON();
 ``````javascript
 /** CORRECT USAGE */
 
-{}.hasOwnProperty.call(foo, "bar");
+{}.hasOwnProperty.call(foo, 'bar');
 {}.isPrototypeOf.call(foo, bar);
-{}.propertyIsEnumerable.call(foo, "bar");
+{}.propertyIsEnumerable.call(foo, 'bar');
 
 
 /** INCORRECT USAGE */
 
-foo.hasOwnProperty("bar");
+foo.hasOwnProperty('bar');
 foo.isPrototypeOf(bar);
-foo.propertyIsEnumerable("bar");
+foo.propertyIsEnumerable('bar');
 
 ``````
 
@@ -519,13 +519,13 @@ foo.propertyIsEnumerable("bar");
 /** CORRECT USAGE */
 
 /foo {3}bar/;
-new RegExp("foo {3}bar");
+new RegExp('foo {3}bar');
 
 
 /** INCORRECT USAGE */
 
 /foo   bar/;
-new RegExp("foo   bar");
+new RegExp('foo   bar');
 
 ``````
 
