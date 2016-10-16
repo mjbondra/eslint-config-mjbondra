@@ -1,30 +1,30 @@
-## Possible Errors
+# Possible Errors
 
 
 
 ## [no-cond-assign](http://eslint.org/docs/rules/no-cond-assign)
 
 - disallow assignment operators in conditional expressions
-- allows assignments in test conditions *only if* they are enclosed in parentheses
+  - allows assignments in test conditions *only if* they are enclosed in parentheses
 - ```'no-cond-assign': 'error'```
 
 ```javascript
 /** CORRECT USE */
 
 // comparison
-if (node.value === 'foo') { }
+if (node.value === 'foo') {}
 
 // assignment enclosed in parentheses
-while ((node = node.parent)) { }
+while ((node = node.parent)) {}
 
 
 /** INCORRECT USE */
 
 // unintentional assignment
-if (node.value = 'foo') { }
+if (node.value = 'foo') {}
 
 // assignment not enclosed in parentheses
-while (node = node.parent) { }
+while (node = node.parent) {}
 
 ```
 
@@ -60,14 +60,14 @@ console.error('foobar');
 ## [no-constant-condition](http://eslint.org/docs/rules/no-constant-condition)
 
 - disallow constant expressions in conditions
-- allows constant expressions in loops
+  - allows constant expressions in loops
 - `'no-constant-condition': ['error', { checkLoops: false }]`
 
 ```javascript
 /** CORRECT USE */
 
 // variable expression in condition
-if (!!value) { }
+if (!!value) {}
 
 // constant expression in loop condition
 while (true) {
@@ -78,7 +78,7 @@ while (true) {
 /** INCORRECT USE */
 
 // constant expression in condition
-if (true) { }
+if (true) {}
 
 ```
 
@@ -92,14 +92,14 @@ if (true) { }
 ```javascript
 /** CORRECT USE */
 
-const pattern1a = /\x20/;
-const pattern2a = new RegExp('\x20');
+const foo = /\x20/;
+const bar = new RegExp('\x20');
 
 
 /** INCORRECT USE */
 
-const pattern1b = /\x1f/;
-const pattern2b = new RegExp('\x1f');
+const foo = /\x1f/;
+const bar = new RegExp('\x1f');
 
 ```
 
@@ -127,12 +127,12 @@ debugger;
 ``````javascript
 /** CORRECT USE */
 
-function foo (a, b, c) { }
+function foo (a, b, c) {}
 
 
 /** INCORRECT USE */
 
-function bar (a, b, a) { }
+function foo (a, b, a) {}
 
 ``````
 
@@ -146,19 +146,19 @@ function bar (a, b, a) { }
 ``````javascript
 /** CORRECT USE */
 
-const obj1 = {
-  foo: true,
-  bar: 1,
-  baz: 'foobar'
+const foo = {
+  bar: true,
+  baz: 1,
+  qux: 'foobar'
 };
 
 
 /** INCORRECT USE */
 
-const obj2 = {
-  foo: true,
-  bar: 1,
-  foo: 'foobar'
+const foo = {
+  bar: true,
+  baz: 1,
+  bar: 'foobar'
 };
 
 ``````
@@ -222,7 +222,7 @@ switch (foo) {
 ## [no-empty](http://eslint.org/docs/rules/no-empty)
 
 - disallow empty block statements
-- allows empty `catch` clauses
+  - allows empty `catch` clauses
 - `'no-empty': ['error', { allowEmptyCatch: true }]`
 
 ``````javascript
@@ -236,13 +236,13 @@ if (bar) {
 // empty catch block
 try {
   foo();
-} catch (err) { }
+} catch (err) {}
 
 
 /** INCORRECT USE */
 
 // empty block
-if (bar) { }
+if (bar) {}
 
 ``````
 
@@ -296,11 +296,11 @@ function bar (prop) {
 /** INCORRECT USAGE */
 
 // explicit and implicit boolean coercion
-const baz = !!prop ? 1 : 0;
+const foo = !!prop ? 1 : 0;
 if (!!prop) { }
 
 // extraneous explicit boolean coercion
-function foobar (prop) {
+function bar (prop) {
   return !!!prop;
 }
 
@@ -311,14 +311,24 @@ function foobar (prop) {
 ## [no-extra-parens](http://eslint.org/docs/rules/no-extra-parens)
 
 - disallow unnecessary parentheses
-- allows extra parentheses around assignments in conditional test expressions
-- `'no-extra-parens': ['error', 'all', { conditionalAssign: false }]`
+  - allows extra parentheses around assignments in conditional test expressions
+  - allows extra parentheses around assignments in `return` statements
+  - allows extra parentheses in nested binary expressions
+
+
+- ``````
+  'no-extra-parens': ['error', 'all', {
+    conditionalAssign: false,
+    returnAssign: false,
+    nestedBinaryExpressions: false
+  }]
+  ``````
 
 ``````javascript
 /** CORRECT USAGE */
 
 // no unnecessary parentheses
-const foo = a * b + c;
+const foo = b * c;
 typeof foo;
 
 // parentheses around conditional assignment
@@ -326,12 +336,18 @@ while ((bar = foobar())) {
   bar.foo();
 }
 
+// parenthesis around return assignment
+const bar = () => (qux = false)
+
+// parenthesis around nested binary expressions
+const baz = a + (b * c);
+
 
 /** INCORRECT USAGE */
 
 // unnecessary parentheses
-const baz = (a * b) + c;
-typeof (baz);
+const foo = (b * c);
+typeof (foo);
 
 ``````
 
@@ -357,10 +373,10 @@ const bar = val => {
 /** INCORRECT USAGE */
 
 // multiple semicolons
-const baz = true;;
+const foo = true;;
 
 // semicolon after function statement
-function foobar (val) {
+function bar (val) {
   return !!val;
 };
 
@@ -413,6 +429,7 @@ if (foo) {
   var bar = true;
   function baz (val) { return !!val; }
 }
+
 ``````
 
 
@@ -460,6 +477,7 @@ const foo = 'a﻿b'; // a\ufeffb
 
 // irregular whitespace
 ﻿ // \ufeff
+
 ``````
 
 
@@ -546,10 +564,10 @@ const foo = new Array(5);
 /** INCORRECT USAGE */
 
 // intentional sparse array
-const bar = [,,,,,];
+const foo = [,,,,,];
 
 // unintentional sparse array
-const baz = ['foo', 'bar', , 'baz'];
+const bar = ['foo', 'bar', , 'baz'];
 
 ``````
 
@@ -565,6 +583,7 @@ const baz = ['foo', 'bar', , 'baz'];
 
 // backticks
 `Hello ${name}!`;
+
 
 /** INCORRECT USAGE */
 
@@ -614,7 +633,7 @@ const baz = () => {}
 ## [no-unreachable](http://eslint.org/docs/rules/no-unreachable)
 
 - disallow unreachable code after `return`, `throw`, `continue`, and `break` statements
-- allows for references to hoisted variables and functions
+  - allows for references to hoisted variables and functions
 - `'no-unreachable': 'error'`
 
 ``````javascript
@@ -651,7 +670,7 @@ while (true) {
 ## [no-unsafe-finally](http://eslint.org/docs/rules/no-unsafe-finally)
 
 - disallow `return`, `throw`, `break`, and `continue` statements in `finally` blocks
-- allows indirect usages, such as in `function` or `class` definitions
+  - allows indirect usages, such as in `function` or `class` definitions
 - `'no-unsafe-finally': 'error'`
 
 ``````javascript
@@ -688,14 +707,15 @@ try {
 ``````javascript
 /** CORRECT USAGE */
 
-if (!(key in object)) { }
-if (!(obj instanceof Ctor)) { }
-if(('' + !key) in object) { }
+if (!(key in object)) {}
+if (!(obj instanceof Ctor)) {}
+if(('' + !key) in object) {}
+
 
 /** INCORRECT USAGE */
 
-if (!key in object) { }
-if (!obj instanceof Ctor) { }
+if (!key in object) {}
+if (!obj instanceof Ctor) {}
 
 ``````
 
@@ -709,14 +729,14 @@ if (!obj instanceof Ctor) { }
 ``````javascript
 /** CORRECT USAGE */
 
-if (isNaN(foo)) { }
-if (!isNaN(foo)) { }
+if (isNaN(foo)) {}
+if (!isNaN(foo)) {}
 
 
 /** INCORRECT USAGE */
 
-if (foo === NaN) { }
-if (foo !== NaN) { }
+if (foo === NaN) {}
+if (foo !== NaN) {}
 
 ``````
 
@@ -729,10 +749,12 @@ if (foo !== NaN) { }
 
 
 
+
+
 ## [valid-typeof](http://eslint.org/docs/rules/valid-typeof)
 
 - enforce comparing `typeof` expressions against valid strings
-- requires `typeof` expressions to only be compared to string literals or other `typeof` expressions, and disallows comparisons to any other value
+  - requires `typeof` expressions to only be compared to string literals or other `typeof` expressions, and disallows comparisons to any other value
 - `'valid-typeof': ['error', { requireStringLiterals: true }]`
 
 ``````javascript
@@ -752,4 +774,6 @@ typeof baz === 'strnig';
 typeof qux === 'some invalid type';
 typeof baz === anotherVariable;
 typeof foo === 5;
+
 ``````
+
