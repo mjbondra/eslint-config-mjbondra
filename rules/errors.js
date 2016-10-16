@@ -10,7 +10,11 @@ module.exports = {
     'no-empty': ['error', { allowEmptyCatch: true }],
 
     // disallow unnecessary parentheses around expressions
-    'no-extra-parens': ['error', 'all', { conditionalAssign: false }],
+    'no-extra-parens': ['error', 'all', {
+      conditionalAssign: false,
+      returnAssign: false,
+      nestedBinaryExpressions: false
+    }],
 
     // disallow unnecessary semicolons
     'no-extra-semi': 'error',
