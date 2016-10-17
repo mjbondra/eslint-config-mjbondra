@@ -4,7 +4,9 @@
   "description": "ESLint configurations for Michael J. Bondra's JavaScript projects",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "eslint": "eslint \"**/*.js\"",
+    "mocha": "mocha",
+    "test": "npm run eslint && npm run mocha"
   },
   "repository": {
     "type": "git",
