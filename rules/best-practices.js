@@ -6,8 +6,8 @@ module.exports = {
     // require return statements in callbacks of array's methods
     'array-callback-return': 'error',
 
-    // treat var statements as if they were block scoped
-    'block-scoped-var': 'error',
+    // require that class methods utilize this
+    'class-methods-use-this': 'error',
 
     // require return statements to either always or never specify values
     'consistent-return': 'error',
@@ -16,7 +16,7 @@ module.exports = {
     'default-case': ['error', { commentPattern: '^no default$' }],
 
     // require dot notation whenever possible
-    'dot-notation': ['error', { allowKeywords: true }],
+    'dot-notation': 'error',
 
     // require strict equality operators
     eqeqeq: 'error',
@@ -33,17 +33,8 @@ module.exports = {
     // disallow else after a return in an if
     'no-else-return': 'error',
 
-    // disallow empty functions, except for standalone funcs/arrows/methods
-    'no-empty-function': ['error', {
-      allow: [
-        'arrowFunctions',
-        'functions',
-        'methods'
-      ]
-    }],
-
-    // disallow unnecessary labels
-    'no-extra-label': 'error',
+    // disallow empty functions
+    'no-empty-function': 'error',
 
     // disallow creation of functions within loops
     'no-loop-func': 'error',
@@ -56,13 +47,7 @@ module.exports = {
     'no-script-url': 'error',
 
     // disallow unused expressions
-    'no-unused-expressions': ['error', {
-      allowShortCircuit: false,
-      allowTernary: false
-    }],
-
-    // disallow unused labels
-    'no-unused-labels': 'error',
+    'no-unused-expressions': 'error',
 
     // disallow useless string concatenation
     'no-useless-concat': 'error',
