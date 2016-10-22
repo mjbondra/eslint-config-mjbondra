@@ -16,7 +16,7 @@
 
 'use strict';
 
-function () {
+function foo () {
   'use strict';
 }
 ``````
@@ -37,7 +37,7 @@ function () {
 
 /** INCORRECT USAGE */
 
-function () {
+function foo () {
   'use strict';
 }
 ``````
