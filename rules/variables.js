@@ -3,6 +3,9 @@
 module.exports = {
   rules: {
 
+    // disallow labels that share a name with a variable
+    'no-label-var': 'off',
+
     // disallow declaration of variables already declared in the outer scope
     'no-shadow': 'error',
 
