@@ -227,7 +227,7 @@ switch (foo) {
 - disallow empty character classes in regular expressions
 
 ```javascript
-'no-empty-character-class': 'error'
+{ 'no-empty-character-class': 'error' }
 ```
 
 ```javascript
@@ -374,7 +374,7 @@ while ((bar = foobar())) {
 }
 
 // parenthesis around return assignment
-const bar = () => (qux = false)
+const bar = () => (qux = false);
 
 // parenthesis around nested binary expressions
 const baz = a + (b * c);
@@ -385,7 +385,6 @@ const baz = a + (b * c);
 // unnecessary parentheses
 const foo = (b * c);
 typeof (foo);
-
 ```
 
 
