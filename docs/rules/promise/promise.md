@@ -1,4 +1,4 @@
-# Promises
+# Promise: Promise
 
 
 
@@ -6,11 +6,11 @@
 
 - require the use of `catch` on un-returned promises
 
-``````javascript
+```javascript
 { 'promise/catch-or-return': 'error' }
-``````
+```
 
-``````javascript
+```javascript
 /** CORRECT USAGE */
 
 foo.then(baz).catch(qux);
@@ -22,7 +22,7 @@ function bar () { return foo.then(baz); }
 foo.then(baz);
 foo.then(baz, qux);
 function bar () { foo.then(baz) }
-``````
+```
 
 
 
@@ -30,9 +30,9 @@ function bar () { foo.then(baz) }
 
 - disallow wrapping values in `Promise.resolve` or `Promise.reject` when not needed
 
-``````javascript
+```javascript
 { 'promise/no-return-wrap': 'off' }
-``````
+```
 
 
 
@@ -44,7 +44,7 @@ function bar () { foo.then(baz) }
 { 'promise/param-names': 'error' }
 ```
 
-``````javascript
+```javascript
 /** CORRECT USAGE */
 
 new Promise((resolve) => {});
@@ -55,7 +55,7 @@ new Promise((resolve, reject) => {});
 
 new Promise(function (reject, resolve) {}) // incorrect order
 new Promise(function (ok, fail) {}) // non-standard parameter names
-``````
+```
 
 
 
@@ -63,11 +63,11 @@ new Promise(function (ok, fail) {}) // non-standard parameter names
 
 - require a `return` statement inside each `then` to create readable and reusable Promise chains
 
-``````javascript
+```javascript
 { 'promise/always-return': 'error' }
-``````
+```
 
-``````javascript
+```javascript
 /** CORRECT USAGE */
 
 foo.then(bar => bar.baz());
@@ -83,7 +83,7 @@ foo.then(bar => { bar.baz(); });
 foo.then(bar => {
   const qux = bar.baz();
 });
-``````
+```
 
 
 
@@ -91,27 +91,7 @@ foo.then(bar => {
 
 - ensure that `Promise` is included fresh in each file instead of relying on the existence of a native promise implementation
 
-``````javascript
+```javascript
 { 'promise/no-native': 'off' }
-``````
-
-
-
-## [promise/prefer-await-to-then](https://github.com/xjamundx/eslint-plugin-promise)
-
-- prefer `await` to `then()` for reading Promise values
-
-``````javascript
-{ 'promise/prefer-await-to-then': 'off' }
-``````
-
-
-
-## [promise/prefer-await-to-callbacks](https://github.com/xjamundx/eslint-plugin-promise)
-
-- prefer `async`/`await` to the callback pattern
-
-``````javascript
-{ 'promise/prefer-await-to-callbacks': 'off' }
-``````
+```
 
