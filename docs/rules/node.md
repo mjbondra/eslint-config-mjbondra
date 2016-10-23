@@ -42,6 +42,7 @@ function bar () {
 ## [handle-callback-err](http://eslint.org/docs/rules/handle-callback-err)
 
 - require error handling in callbacks
+  - requires handling of `err` and `error` when they are the first argument of a callback
 
 ``````javascript
 { 'handle-callback-err': ['error', '^(err|error)$' ] }
@@ -55,10 +56,19 @@ function (err, data) {
   return data;
 }
 
+function (error, data) {
+  if (error) {} // handle error
+  return data;
+}
+
 
 /** INCORRECT USAGE */
 
 function (err, data) {
+  return data;
+}
+
+function (error, data) {
   return data;
 }
 
