@@ -1474,8 +1474,6 @@ obj.foo.apply(obj, [1, 2, 3]);
 /** CORRECT USAGE */
 
 const foo = a + b;
-const bar = '1' + a;
-const baz = 1 + '1';
 const foobar = 1 - 2;
 
 
@@ -1533,12 +1531,12 @@ const qux = `1` + `0`;
 ``````javascript
 /** CORRECT USAGE */
 
-const undef = void 0;
+const undef = undefined;
 
 
 /** INCORRECT USAGE */
 
-const undef = undefined;
+const undef = void 0;
 void foo();
 ``````
 
