@@ -4,7 +4,7 @@ module.exports = {
   rules: {
 
     // enforces no braces where they can be omitted
-    'arrow-body-style': ['error', 'as-needed'],
+    'arrow-body-style': 'error',
 
     // require space after the * in generator functions
     'generator-star-spacing': ['error', 'after'],
