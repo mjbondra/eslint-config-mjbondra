@@ -150,7 +150,7 @@ Create a file named `.eslintrc` in your project's root directory that contains t
 | [no-eval](http://eslint.org/docs/rules/no-eval) | disallow the use of `eval()`             | 🔴         | 🔴                | 🔴                       | 🔴                     |
 | [no-extend-native](http://eslint.org/docs/rules/no-extend-native) | disallow extending native types          | 🔴         | 🔴                | 🔴                       | 🔴                     |
 | [no-extra-bind](http://eslint.org/docs/rules/no-extra-bind) | disallow unnecessary calls to `.bind()`  | 🔴         | 🔴                | 🔴                       | 🔴                     |
-| [no-extra-label)](http://eslint.org/docs/rules/no-extra-label) | disallow unnecessary labels              | 🔴         | 🔴                | ⚪️                       | 🔴                     |
+| [no-extra-label](http://eslint.org/docs/rules/no-extra-label) | disallow unnecessary labels              | 🔴         | 🔴                | ⚪️                       | 🔴                     |
 | [no-fallthrough](http://eslint.org/docs/rules/no-fallthrough) | disallow fallthrough of `case` statements | 🔴         | 🔴                | 🔴                       | 🔴                     |
 | [no-floating-decimal](http://eslint.org/docs/rules/no-floating-decimal) | disallow leading or trailing decimal points in numeric literals | 🔴         | 🔴                | 🔴                       | 🔴                     |
 | [no-global-assign](http://eslint.org/docs/rules/no-global-assign) | disallow assignments to native objects or read-only global variables | 🔴         | 🔴                | 🔴                       | 🔴                     |
