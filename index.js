@@ -8,7 +8,7 @@ module.exports = {
     // base rules
     './rules/best-practices.js',
     './rules/errors.js',
-    './rules/es6.js',
+    './rules/es2015.js',
     './rules/imports.js',
     './rules/node.js',
     './rules/promises.js',
